@@ -311,7 +311,7 @@ body {
 }
 
 #start-button {
-    padding: 15px 30px;
+    /* padding: 15px 30px; */
     font-size: 1.2rem;
     color: white;
     background-color: #297a3c;
@@ -329,6 +329,7 @@ body {
 }
 
 #start-buttton:active{
+    /* transition: 0.25s; */
     background-color: #770404;
     transform: scale(0.98);
 }
@@ -438,7 +439,7 @@ body {
 .divPersonagem {
     border: 3px solid white;
     /* Borda padrão */
-    width: 130px;
+    width: 200px;
 }
 
 

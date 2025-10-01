@@ -28,7 +28,7 @@ pipe.style.width = '150px'
 pipe.style.height = '150px'
 
 var contadorMoeda = 0
-let numeroAleatorio
+let numeroAleatorio;
 
 /* =========================================
    ELEMENTOS DA TELA INICIAL
@@ -47,10 +47,9 @@ const startButton = document.querySelector('#start-button');
    Pré-carregamento dos arquivos de áudio e
    definição de imagens padrão para o jogo.
 */
-var marioGifPath = ""
-var denovo = false
-
-musicaMario = ""
+var marioGifPath = "_imagens/newMario.gif";
+var denovo = false;
+var musicaMario = new Audio("_media/_sons/faseSons/MarioMusica.mp3");
 
 const selectSound = new Audio('./_media/_sons/undertale-select.mp3');
 const coinSound = new Audio('./_media/_sons/coin-audio.mp3');
@@ -254,6 +253,7 @@ function startGame() {
     // LOOP PRINCIPAL DE VERIFICAÇÃO DE COLISÃO
     loop = setInterval(() => {
         if (pausa || estaInvuneravel) return;
+        musicaMario.play()
 
         const marioPositionBottom = +window.getComputedStyle(mario).bottom.replace('px', '');
         const marioPositionLeft = mario.offsetLeft;
@@ -352,57 +352,57 @@ function escolhaPersonagem(personagem) {
             musicaMario = new Audio('./_media/_sons/faseSons/MarioMusica.mp3')
             marioGifPath = './_imagens/newMario.gif';
             gameOverImagePath = './_imagens/morte/Game over mario.png';
-            pipe.src = "_imagens/Goomba.gif"
+            pipe.src = "./_imagens/Goomba.gif"
             pipe.style.width = '150px'
             pipe.style.height = '150px'
-            chaoGifPath = '/_imagens/chãoMario.png';
+            chaoGifPath = './_imagens/chãoMario.png';
             mario.style.width = '200px'
             clouds.style.width = "600x"
-            clouds.src = "_imagens/clouds.png"
-            fundo.src = '_imagens/fundos/FundoMario.png'
+            clouds.src = "./_imagens/clouds.png"
+            fundo.src = './_imagens/fundos/FundoMario.png'
             fundo.style.bottom = "0"
             break;
         case 'sonic':
             gameBoard.style.background = "linear-gradient( #0b0d5bff, #1647c4ff, #4fc0edff )"
-            musicaMario = new Audio('./_media/_sons/faseSons/SonicMusica.mp3')
+            musicaMario = new Audio('./_media/_sons/faseSons/Sonic2.mp3')
             marioGifPath = './_imagens/sonic-run.gif';
-            pipe.src = "_imagens/Carangueijo.gif"
+            pipe.src = "./_imagens/Carangueijo.gif"
             pipe.style.width = '150px'
             pipe.style.height = '150px'
             gameOverImagePath = './_imagens/morte/game-over-sonic.png';
-            chaoGifPath = '/_imagens/chaoSonic.png';
+            chaoGifPath = './_imagens/chaoSonic.png';
             mario.style.width = '150px'
-             clouds.src = "_imagens/Abelha.gif"
+             clouds.src = "./_imagens/Abelha.gif"
              clouds.style.width = "350px"
-            fundo.src = '_imagens/fundos/Sonic Fundo.png'
+            fundo.src = './_imagens/fundos/Sonic Fundo.png'
             break;
         case 'dexter':
             gameBoard.style.background = "linear-gradient( #13465aff, #307fad, #5d6668ff )"
-            pipe.src = "_imagens/Foguete.gif"
+            pipe.src = "./_imagens/Foguete.gif"
             pipe.style.width = '150px'
             pipe.style.height = '150px'
             musicaMario = new Audio('./_media/_sons/faseSons/ovelha.mp3')
-            marioGifPath = '_imagens/Dexter.gif';
+            marioGifPath = './_imagens/Dexter.gif';
             gameOverImagePath = './_imagens/morte/Dexter Morte.png';
-            chaoGifPath = '/_imagens/chaoDexter.png';
+            chaoGifPath = './_imagens/chaoDexter.png';
             mario.style.width = '250px'
-            fundo.src = '_imagens/fundos/Fundo dexter.png'
-            clouds.src = "_imagens/bolhas.png"
+            fundo.src = './_imagens/fundos/Fundo dexter.png'
+            clouds.src = "./_imagens/bolhas.png"
             clouds.style.width = "350px"
             break;
         case 'florzinha':
-            pipe.src = "_imagens/Macacolouco.gif"
+            pipe.src = "./_imagens/Macacolouco.gif"
             pipe.style.width = '150px'
             pipe.style.height = '150px'
             musicaMario = new Audio('./_media/_sons/faseSons/MeninasSuperpoderosasTurbo.mp3')
-            marioGifPath = '_imagens/Florzinha.gif';
-            gameOverImagePath = '_imagens/morte/Florzinha morte.png';
-            chaoGifPath = '_imagens/ChãoMeninas.png';
+            marioGifPath = './_imagens/Florzinha.gif';
+            gameOverImagePath = './_imagens/morte/Florzinha morte.png';
+            chaoGifPath = './_imagens/ChãoMeninas.png';
             mario.style.width = '220px'
-            fundo.src = '_imagens/fundos/PowerFundo.png'
+            fundo.src = './_imagens/fundos/PowerFundo.png'
             gameBoard.style.background = 'linear-gradient( #f5cfecff , #ffadeb, #ff7ee0  )'
             clouds.style.width = "250px"
-            clouds.src = "_imagens/Nuvem powerpuff.gif"
+            clouds.src = "./_imagens/Nuvem powerpuff.gif"
             break; 
         case 'osso':
             pipe.src = "_imagens/gaveira.gif"
@@ -536,11 +536,12 @@ function bmo() {
         mario.style.width = '250px'
         mario.src = marioGifPath;
         spriteMorteTemporario = gameOverImagePath;
+        gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff)"
         chao1.src = chaoGifPath;
         chao2.src = chaoGifPath;
         chao3.src = chaoGifPath;
         musicaMario = new Audio('./_media/_sons/faseSons/HoraDeAventura.mp3')
-        fundo.src = '_imagensAventura B.png'
+        fundo.src = './_imagens/Aventura B.png'
     }
 
 }
