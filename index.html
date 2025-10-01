@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Mario</title>
+    <link rel="stylesheet" href="_css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="_imagens/intro.png">
+</head>
+
+<body>
+
+    <div id="passioneScreen">
+        <img id="startup-image" src="./_imagens/logos/lgo senai (1).png" alt="Tela de Abertura">
+
+    </div>
+    <div class="cenario">
+        <img src="/_imagens/chãoMario.png" id="img1" class="chao">
+        <img src="/_imagens/chãoMario.png" id="img2" class="chao">
+        <img src="/_imagens/chãoMario.png" id="img3" class="chao">
+    </div>
+    <div class="game-board">
+        <div class="tela-Inicial">
+            <div class="senai">
+                <img src="_imagens/logos/lgo jogo.png" alt="" width="350px">
+            </div>
+            <label for="nickname">Digite seu Nick:</label>
+            <input type="text" id="nickname" placeholder="Seu Nick Aqui" maxlength="15">
+            <button id="start-button">Start</button>
+
+
+            <div id="escolha-Personagem">
+                <div id="marioDiv" class="divPersonagem" value="mario" onclick="escolhaPersonagem('mario')">
+                    <img src="/_imagens/newMario.gif" alt="" class="personagemEscolha">
+                    <p>Mario</p>
+                </div>
+                <div id="sonicDiv" class="divPersonagem" value="sonic" onclick="escolhaPersonagem('sonic')">
+                    <img src="_imagens/sonic-run.gif" alt="" class="personagemEscolha">
+                    <p>Sonic</p>
+                </div>
+                <div id="dexterDiv" class="divPersonagem" value="dexter" onclick="escolhaPersonagem('dexter')">
+                    <img src="/_imagens/Dexter.gif" alt="" class="personagemEscolha">
+                    <p>Dexter</p>
+                </div>
+                <div id="florzinhaDiv" class="divPersonagem" value="florzinha" onclick="escolhaPersonagem('florzinha')">
+                    <img src="_imagens/Florzinha.gif" alt="" class="personagemEscolha">
+                    <p>Link</p>
+                </div>
+                <div id="ossoDiv" class="divPersonagem" value="osso" onclick="escolhaPersonagem('osso')">
+                    <img src="_imagens/Puro osso.gif" alt="" class="personagemEscolha">
+                    <p>Goku</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="fundos">
+            <img src="/_imagens/fundos/FundoMario.png" class="fundo-gif">
+        </div>
+        <div class="tela-jogar-denovo">
+            <h1>Voce deseja jogar outra vez?</h1>
+            <div id="Continuar-Reniciar">
+                <button class="Continuar" style="background-color: #44AF69; box-shadow: 0 4px #2a6f43;"
+                    onclick="continuarReniciar('continuar')">Continuar</button>
+                <button class="Reniciar" style="background-color: red; box-shadow: 0 4px #8a3030;"
+                    onclick="continuarReniciar('Reniciar')">Reniciar</button>
+            </div>
+        </div>
+
+        <div id="inferno-background"></div>
+        <!-- <div class="onda-calor"></div> -->
+        <img src="/_media/com-webp-to-gif-converter-unscreen.gif" class="pipe">
+        <img src="./_imagens/bullet.png" width="100px" class="bullet">
+        <img src="./_imagens/newMario.gif" class="mario" id="marioInicio">
+        <img src="./_imagens/clouds.png" class="clouds">
+        <div id="star-layer"></div>
+        
+
+        <div class="score-container">
+            <div class="score">Score: 0</div>
+            <div id="lives-container"></div>
+        </div>
+
+        <div class="game-over-screen" style="display: none;">
+            <h2>Game Over</h2>
+            <p>Sua pontuação foi: <span id="final-score">0</span></p>
+            <button id="restart-button" onclick="window.location.reload()">Jogar Novamente</button>
+        </div>
+
+    </div>
+</body>
+<script src="_javascript/script.js" defer></script>
+
+</html>
