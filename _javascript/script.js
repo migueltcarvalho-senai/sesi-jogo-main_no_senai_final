@@ -531,6 +531,7 @@ disaparece()
 function bmo() {
     if (playerNick == "papai") {
         marioGifPath = '_imagens/Bmo.gif';
+        pipe.src = "_imagens/gunter.gif"
         gameOverImagePath = './_imagens/morte/Bmo Morte.png';
         chaoGifPath = '/_imagens/chaoHoraDeAventura.png';
         mario.style.width = '250px'
