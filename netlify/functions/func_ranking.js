@@ -67,7 +67,7 @@ exports.handler = async (event) => {
         };
       }
 
-      await dbPool.query('INSERT INTO superrunranking (nome, score) VALUES ($1, $2)', [nome.trim(), score]);
+      await dbPool.query('INSERT INTO toonjumpranking (nome, score) VALUES ($1, $2)', [nome.trim(), score]);
       
       return {
         statusCode: 200,
@@ -77,7 +77,7 @@ exports.handler = async (event) => {
     }
 
     if (event.httpMethod === 'GET') {
-      const result = await dbPool.query('SELECT nome, score FROM superrunranking ORDER BY score DESC LIMIT 10');
+      const result = await dbPool.query('SELECT nome, score FROM toonjumpranking ORDER BY score DESC LIMIT 10');
       
       return {
         statusCode: 200,
