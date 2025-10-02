@@ -357,7 +357,7 @@ function escolhaPersonagem(personagem) {
             pipe.style.height = '150px'
             chaoGifPath = './_imagens/chãoMario.png';
             mario.style.width = '200px'
-            clouds.style.width = "600x"
+            clouds.style.width = "370px"
             clouds.src = "./_imagens/clouds.png"
             fundo.src = './_imagens/fundos/FundoMario.png'
             fundo.style.bottom = "0"
@@ -372,8 +372,8 @@ function escolhaPersonagem(personagem) {
             gameOverImagePath = './_imagens/morte/game-over-sonic.png';
             chaoGifPath = './_imagens/chaoSonic.png';
             mario.style.width = '150px'
-             clouds.src = "./_imagens/Abelha.gif"
-             clouds.style.width = "350px"
+             clouds.src = "./_imagens/Abelha.png"
+             clouds.style.width = "370px"
             fundo.src = './_imagens/fundos/Sonic Fundo.png'
             break;
         case 'dexter':
@@ -388,7 +388,7 @@ function escolhaPersonagem(personagem) {
             mario.style.width = '250px'
             fundo.src = './_imagens/fundos/Fundo dexter.png'
             clouds.src = "./_imagens/bolhas.png"
-            clouds.style.width = "350px"
+            clouds.style.width = "370px"
             break;
         case 'florzinha':
             pipe.src = "./_imagens/Macacolouco.gif"
@@ -401,8 +401,8 @@ function escolhaPersonagem(personagem) {
             mario.style.width = '220px'
             fundo.src = './_imagens/fundos/PowerFundo.png'
             gameBoard.style.background = 'linear-gradient( #f5cfecff , #ffadeb, #ff7ee0  )'
-            clouds.style.width = "250px"
-            clouds.src = "./_imagens/Nuvem powerpuff.gif"
+            clouds.style.width = "370px"
+            clouds.src = "./_imagens/Nuvem powerpuff.png"
             break; 
         case 'osso':
             pipe.src = "_imagens/gaveira.gif"
@@ -415,8 +415,8 @@ function escolhaPersonagem(personagem) {
             mario.style.width = '150px'
             fundo.src = '_imagens/fundos/Puro osso.png'
             gameBoard.style.background = " linear-gradient( #0b7b56ff, #07463bff, #000000)"
-            clouds.src = "_imagens/nuvem negra.gif"
-            clouds.style.width = "350spx"
+            clouds.src = "_imagens/nuvem negra.png"
+            clouds.style.width = "370spx"
             break;
         default:
             console.warn(`Personagem '${personagem}' não reconhecido. Usando Mario padrão.`);
