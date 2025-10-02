@@ -474,6 +474,12 @@ function morrer(pipePosition, bulletPosition, marioPosition) {
     salvarPontuacao(playerNick, score);
 }
 
+function salvarPontuacao(nomeJogador, pontuacaoFinal) {
+    if (typeof window.salvarScoreRanking === 'function') {
+        window.salvarScoreRanking(nomeJogador, pontuacaoFinal);
+    }
+}
+
 function criarMoeda(bottom) {
     const novaMoeda = document.createElement('img');
     novaMoeda.src = './_imagens/coin.png';
