@@ -17,19 +17,17 @@ const gameBoard = document.querySelector('.game-board');
 const root = document.documentElement;
 const clouds = document.querySelector('.clouds');
 const starLayer = document.querySelector('#star-layer');
-const infernoBackground = document.querySelector("#inferno-background");
 const passioneScreen = document.querySelector('#passioneScreen');
 const chao1 = document.querySelector("#img1");
 const chao2 = document.querySelector("#img2");
 const chao3 = document.querySelector("#img3");
-const fundo = document.querySelector('.fundo-gif')
-pipe.src = '_imagens/Goomba.gif'
-pipe.style.width = '150px'
-pipe.style.height = '150px'
+const fundo = document.querySelector('.fundo-gif');
+pipe.src = '_imagens/Goomba.gif';
+pipe.style.width = '150px';
+pipe.style.height = '150px';
 
 var contadorMoeda = 0
 let numeroAleatorio;
-
 /* =========================================
    ELEMENTOS DA TELA INICIAL
    =========================================
@@ -39,29 +37,26 @@ let numeroAleatorio;
 const telaInicial = document.querySelector('.tela-Inicial');
 const nicknameInput = document.querySelector('#nickname');
 const startButton = document.querySelector('#start-button');
-
-
 /* =========================================
    RECURSOS DE ÁUDIO E IMAGENS PADRÃO
    =========================================
    Pré-carregamento dos arquivos de áudio e
    definição de imagens padrão para o jogo.
 */
-var marioGifPath = "_imagens/newMario.gif";
+var marioGifPath = "./_imagens/persona/newMario.gif";
 var denovo = false;
 var musicaMario = new Audio("_media/_sons/faseSons/MarioMusica.mp3");
 
 const selectSound = new Audio('./_media/_sons/undertale-select.mp3');
 const coinSound = new Audio('./_media/_sons/coin-audio.mp3');
 var localGameOver = './_imagens/morte/game-over-mario.png';
-
 /* =========================================
    VARIÁVEIS DE ESTADO DO JOGO
    =========================================
    Variáveis que controlam o estado atual do
    jogo, como pontuação, vidas, pausa, etc.
 */
-var inicio = false
+var inicio = false;
 let pausa = false;
 let estaInvuneravel = false;
 var vida = 3;
@@ -73,8 +68,6 @@ let loop;
 let scoreInterval;
 let personagemSelecionadoId = 'marioDiv';
 var spriteMorteTemporario = '_imagens/morte/Game over mario.png';
-
-
 /* =========================================
    FLAGS DE CONTROLE DE TEMA
    =========================================
@@ -85,7 +78,6 @@ var spriteMorteTemporario = '_imagens/morte/Game over mario.png';
 let tardeAtivada = false;
 let noiteAtivada = false;
 let infernoAtivado = false;
-
 /* =========================================
    FUNÇÕES PRINCIPAIS DE JOGABILIDADE
    =========================================
@@ -107,8 +99,7 @@ function atualizarVidas() {
         lifeIcon.classList.add('life-icon');
         livesContainer.appendChild(lifeIcon);
     }
-}
-
+};
 /**
  * Controla a ação de pulo do personagem.
  */
@@ -118,11 +109,8 @@ const jump = () => {
         if (inicio == true) {
             setTimeout(() => mario.classList.remove('jump'), 700);
         }
-
     }
-}
-
-
+};
 /**
  * Chamada quando o jogador colide com um obstáculo.
  * Reduz uma vida, atualiza a tela e, se houver
@@ -135,8 +123,7 @@ function perdeVida() {
     if (vida >= 0) {
         mario.src = spriteMorteTemporario;
     }
-}
-
+};
 /**
  * Ativa um curto período de invulnerabilidade
  * após o jogador perder uma vida e continuar.
@@ -148,8 +135,7 @@ function ativarInvunerabilidade() {
         estaInvuneravel = false;
         mario.classList.remove('invuneravel');
     }, 500);
-}
-
+};
 // buff invulnerabilidade do powerup estrela
 function BuffInvulnerabilidade() {
     estaInvuneravel = true;
@@ -158,9 +144,7 @@ function BuffInvulnerabilidade() {
         estaInvuneravel = false;
         mario.classList.remove('animacao-estrela');
     }, 5000);
-}
-
-
+};
 /* =========================================
    FUNÇÕES DE EFEITOS VISUAIS
    =========================================
@@ -173,8 +157,7 @@ function criarBrasa() {
     ember.style.left = `${Math.random() * 100}%`;
     ember.style.animationDelay = `${Math.random() * 3}s`;
     gameBoard.appendChild(ember);
-}
-
+};
 /* =========================================
    FUNÇÃO PRINCIPAL DO JOGO (STARTGAME)
    =========================================
@@ -183,59 +166,19 @@ function criarBrasa() {
    pontuação e de colisão.
 */
 function startGame() {
-    inicio = true
-    mario.style.display = "block"
-    fundo.style.display = "block"
+    inicio = true;
+    mario.style.display = "block";
+    fundo.style.display = "block";
     telaInicial.style.display = 'none';
     pipe.style.animationPlayState = 'running';
     root.style.setProperty('--velocidade', `2.0s`);
     atualizarVidas();
     bmo()
+    shadow()
 
     scoreInterval = setInterval(() => {
         if (!pausa) score++;
         scoreElement.textContent = `Score: ${score}`;
-
-        // AUMENTO PROGRESSIVO DE VELOCIDADE
-        if (score % 1 === 0 && score > 0 && !infernoAtivado && !pausa) {
-            var velocidadeAtual = parseFloat(getComputedStyle(root).getPropertyValue('--velocidade'));
-            if (velocidadeAtual > 1.5) {
-                let novaVelocidade = Math.max(1.5, velocidadeAtual - 0.001);
-                root.style.setProperty('--velocidade', `${novaVelocidade.toFixed(3)}s`);
-            }
-        }
-
-        // MUDANÇAS DE TEMA
-        if (score >= 500 && !tardeAtivada) {
-            gameBoard.className = 'game-board theme-tarde';
-            starLayer.style.display = 'block';
-            musicaMario.pause();
-            musicaMario = new Audio('./_media/_sons/HoraDeAventura.mp3');
-            musicaMario.play();
-            tardeAtivada = true;
-        }
-        if (score >= 1000 && !noiteAtivada) {
-            starLayer.style.animation = 'brilha-estrela-animation 5s infinite linear';
-            gameBoard.className = 'game-board theme-noite';
-            musicaMario.pause();
-            musicaMario = new Audio('./_media/_sons/silkSong.mp3');
-            musicaMario.play();
-            noiteAtivada = true;
-        }
-        if (score >= 1500 && !infernoAtivado) {
-            gameBoard.className = 'game-board theme-infernal';
-            root.style.setProperty('--velocidade', '1.0s');
-            clouds.src = './_media/minecraft-ghast.gif';
-            musicaMario.pause();
-            musicaMario = new Audio('./_media/_sons/DoomEternal.mp3');
-            musicaMario.play();
-            gameBoard.classList.add('tremer');
-            infernoBackground.style.display = 'block';
-            for (let i = 0; i < 50; i++) {
-                criarBrasa();
-            }
-            infernoAtivado = true;
-        }
 
         // LÓGICA DE BULLET
         // if (score >= 500 && bullet.style.display !== 'block') {
@@ -253,7 +196,7 @@ function startGame() {
     // LOOP PRINCIPAL DE VERIFICAÇÃO DE COLISÃO
     loop = setInterval(() => {
         if (pausa || estaInvuneravel) return;
-        musicaMario.play()
+        musicaMario.play();
 
         const marioPositionBottom = +window.getComputedStyle(mario).bottom.replace('px', '');
         const marioPositionLeft = mario.offsetLeft;
@@ -298,8 +241,7 @@ function startGame() {
             }
         }
     }, 10);
-}
-
+};
 /* =========================================
    EVENT LISTENERS (OUVINTES DE EVENTOS)
    =========================================
@@ -335,88 +277,87 @@ function escolhaPersonagem(personagem) {
 
     if (personagemSelecionadoId) {
         document.getElementById(personagemSelecionadoId).classList.remove('selecionado');
-    }
-
+    };
     const novaSelecaoDiv = document.getElementById(`${personagem}Div`);
     if (novaSelecaoDiv) {
         novaSelecaoDiv.classList.add('selecionado');
         personagemSelecionadoId = `${personagem}Div`;
-    }
+    };
     var gameOverImagePath = `./_imagens/morte/Game over mario.png`;
     mudarDirecao = false;
-    var chaoGifPath = "";
+    var chaoGifPath = "./_imagens/chao/chaomario.png";
 
     switch (personagem) {
         case 'mario':
-            gameBoard.style.background = "linear-gradient( #87ceeb, #e0f6ff)"
-            musicaMario = new Audio('./_media/_sons/faseSons/MarioMusica.mp3')
-            marioGifPath = './_imagens/newMario.gif';
+            gameBoard.style.background = "linear-gradient( #87ceeb, #e0f6ff)";
+            musicaMario = new Audio('./_media/_sons/faseSons/MarioMusica.mp3');
+            marioGifPath = './_imagens/persona/mario.gif';
             gameOverImagePath = './_imagens/morte/Game over mario.png';
-            pipe.src = "./_imagens/Goomba.gif"
-            pipe.style.width = '150px'
-            pipe.style.height = '150px'
-            chaoGifPath = './_imagens/chãoMario.png';
-            mario.style.width = '200px'
-            clouds.style.width = "370px"
-            clouds.src = "./_imagens/clouds.png"
-            fundo.src = './_imagens/fundos/FundoMario.png'
-            fundo.style.bottom = "0"
+            pipe.src = './_imagens/inimigos/goomba.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            chaoGifPath = './_imagens/chao/chaomario.gif';;
+            mario.style.width = '170px';
+            clouds.style.width = "370px";
+            clouds.src = "./_imagens/nuvems/mario.png";
+            fundo.src = './_imagens/fundos/fundomario.png';
+            fundo.style.bottom = "0";
             break;
         case 'sonic':
-            gameBoard.style.background = "linear-gradient( #0b0d5bff, #1647c4ff, #4fc0edff )"
-            musicaMario = new Audio('./_media/_sons/faseSons/Sonic2.mp3')
-            marioGifPath = './_imagens/sonic-run.gif';
-            pipe.src = "./_imagens/Carangueijo.gif"
-            pipe.style.width = '150px'
-            pipe.style.height = '150px'
+            gameBoard.style.background = "linear-gradient( #07085eff, #1647c4ff, #4fc0edff )";
+            fundo.src = './_imagens/fundos/fundosonic.png';
+            musicaMario = new Audio('./_media/_sons/faseSons/Sonic2.mp3');
+            pipe.src = './_imagens/inimigos/carangueijo.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            marioGifPath = './_imagens/persona/sonic.gif';
             gameOverImagePath = './_imagens/morte/game-over-sonic.png';
-            chaoGifPath = './_imagens/chaoSonic.png';
-            mario.style.width = '150px'
-             clouds.src = "./_imagens/Abelha.png"
-             clouds.style.width = "370px"
-            fundo.src = './_imagens/fundos/Sonic Fundo.png'
+            chaoGifPath = './_imagens/chao/chaosonic.gif';
+            mario.style.width = '150px';
+            clouds.src = "./_imagens/nuvems/sonic.gif";
+            clouds.style.width = "370px";
             break;
         case 'dexter':
-            gameBoard.style.background = "linear-gradient( #13465aff, #307fad, #5d6668ff )"
-            pipe.src = "./_imagens/Foguete.gif"
-            pipe.style.width = '150px'
-            pipe.style.height = '150px'
-            musicaMario = new Audio('./_media/_sons/faseSons/ovelha.mp3')
-            marioGifPath = './_imagens/Dexter.gif';
+            gameBoard.style.background = "linear-gradient( #13465aff, #307fad, #5d6668ff )";
+            fundo.src = './_imagens/fundos/fundodexter.png';
+            musicaMario = new Audio('./_media/_sons/faseSons/ovelha.mp3');
+            pipe.src = './_imagens/inimigos/foguete.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            marioGifPath = './_imagens/persona/dexter.gif';
             gameOverImagePath = './_imagens/morte/Dexter Morte.png';
-            chaoGifPath = './_imagens/chaoDexter.png';
-            mario.style.width = '250px'
-            fundo.src = './_imagens/fundos/Fundo dexter.png'
-            clouds.src = "./_imagens/bolhas.png"
-            clouds.style.width = "370px"
+            chaoGifPath = './_imagens/chao/chaodexter.gif';
+            mario.style.width = '170px';
+            clouds.src = "./_imagens/nuvems/dexter.png";
+            clouds.style.width = "370px";
             break;
         case 'florzinha':
-            pipe.src = "./_imagens/Macacolouco.gif"
-            pipe.style.width = '150px'
-            pipe.style.height = '150px'
-            musicaMario = new Audio('./_media/_sons/faseSons/MeninasSuperpoderosasTurbo.mp3')
-            marioGifPath = './_imagens/Florzinha.gif';
+            pipe.src = './_imagens/inimigos/macaco.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/MeninasSuperpoderosasTurbo.mp3');
+            marioGifPath = './_imagens/persona/florzinha.gif';
             gameOverImagePath = './_imagens/morte/Florzinha morte.png';
-            chaoGifPath = './_imagens/ChãoMeninas.png';
-            mario.style.width = '220px'
-            fundo.src = './_imagens/fundos/PowerFundo.png'
-            gameBoard.style.background = 'linear-gradient( #f5cfecff , #ffadeb, #ff7ee0  )'
-            clouds.style.width = "370px"
-            clouds.src = "./_imagens/Nuvem powerpuff.png"
+            chaoGifPath = './_imagens/chao/chaomenina.gif';
+            mario.style.width = '170px';
+            fundo.src = './_imagens/fundos/fundomenina.png'
+            gameBoard.style.background = 'linear-gradient( #f5cfecff , #ffadeb, #ff7ee0  )';
+            clouds.style.width = "370px";
+            clouds.src = "./_imagens/nuvems/menina.png";
             break; 
         case 'osso':
-            pipe.src = "_imagens/gaveira.gif"
-            pipe.style.width = '150px'
-            pipe.style.height = '150px'
-            musicaMario = new Audio('./_media/_sons/faseSons/PuroOsso.mp3')
-            marioGifPath = './_imagens/Puro osso.gif';
+            pipe.src = './_imagens/inimigos/gaveira.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/PuroOsso.mp3');
+            marioGifPath = './_imagens/persona/puro.gif';
             gameOverImagePath = './_imagens/morte/Puro osso morte.png';
-            chaoGifPath = '_imagens/Chão puro osso.png';
-            mario.style.width = '150px'
-            fundo.src = '_imagens/fundos/Puro osso.png'
-            gameBoard.style.background = " linear-gradient( #0b7b56ff, #07463bff, #000000)"
-            clouds.src = "_imagens/nuvem negra.png"
-            clouds.style.width = "370spx"
+            chaoGifPath = './_imagens/chao/chaopuro.gif';
+            mario.style.width = '170px';
+            fundo.src = '_imagens/fundos/fundopuro.png';
+            gameBoard.style.background = " linear-gradient( #0b7b56ff, #07463bff, #000000)";
+            clouds.src = "./_imagens/nuvems/puro.png";
+            clouds.style.width = "370px";
             break;
         default:
             console.warn(`Personagem '${personagem}' não reconhecido. Usando Mario padrão.`);
@@ -430,7 +371,7 @@ function escolhaPersonagem(personagem) {
     chao1.src = chaoGifPath;
     chao2.src = chaoGifPath;
     chao3.src = chaoGifPath;
-}
+};
 
 function continuarReniciar(escolha) {
     if (escolha === 'continuar') {
@@ -452,7 +393,7 @@ function continuarReniciar(escolha) {
     } else if (escolha === 'Reniciar') {
         window.location.reload();
     }
-}
+};
 
 function morrer(pipePosition, bulletPosition, marioPosition) {
     // cano para
@@ -472,13 +413,13 @@ function morrer(pipePosition, bulletPosition, marioPosition) {
     clearInterval(scoreInterval);
     finalScoreElement.textContent = score;
     salvarPontuacao(playerNick, score);
-}
+};
 
 function salvarPontuacao(nomeJogador, pontuacaoFinal) {
     if (typeof window.salvarScoreRanking === 'function') {
         window.salvarScoreRanking(nomeJogador, pontuacaoFinal);
     }
-}
+};
 
 function criarMoeda(bottom) {
     const novaMoeda = document.createElement('img');
@@ -492,8 +433,7 @@ function criarMoeda(bottom) {
             novaMoeda.remove();
         }
     }, 4000);
-}
-
+};
 /* =========================================
    INICIALIZAÇÃO DA PÁGINA
    =========================================
@@ -519,39 +459,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setTimeout(finishStartup, startupDisplayTime);
 });
-// funcao mexer o chao
-let chaoDisaparece = document.querySelector("#img1")
-let chaoDisaparece2 = document.querySelector("#img3")
-
-chaoDisaparece.style.display = "block"
-function disaparece() {
-    setTimeout(() => {
-        chaoDisaparece.style.display = "none"
-    }, 2975);
-    setTimeout(() => {
-        chaoDisaparece2.style.opacity = "100"
-    }, 2975);
-}
-disaparece()
-
 function bmo() {
     if (playerNick == "papai") {
-        marioGifPath = '_imagens/Bmo.gif';
-        pipe.src = "_imagens/gunter.gif"
+        marioGifPath = './_imagens/persona/bmo.gif';
+        pipe.src = "_imagens/inimigos/gunter.gif";
+        pipe.style.width = '150px';
+        pipe.style.height = '150px';
         gameOverImagePath = './_imagens/morte/Bmo Morte.png';
-        chaoGifPath = '/_imagens/chaoHoraDeAventura.png';
-        mario.style.width = '250px'
+        chaoGifPath = './_imagens/chao/chaoaventura.gif';
+        mario.style.width = '170px';
         mario.src = marioGifPath;
         spriteMorteTemporario = gameOverImagePath;
-        gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff)"
-        chao1.src = chaoGifPath;
-        chao2.src = chaoGifPath;
-        chao3.src = chaoGifPath;
-        musicaMario = new Audio('./_media/_sons/faseSons/HoraDeAventura.mp3')
-        fundo.src = './_imagens/Aventura B.png'
-    }
+        gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff)";
+        chao1.src = chaoGifPath;;
+        chao2.src = chaoGifPath;;
+        chao3.src = chaoGifPath;;
+        clouds.style.width = "370px";
+        musicaMario = new Audio('./_media/_sons/faseSons/HoraDeAventura.mp3');
+        fundo.src = './_imagens/fundos/fundoaventura.png';
+    }};
 
+function shadow(){
+    if (playerNick == "shadow") {
+        marioGifPath = "_imagens/persona/shadow.gif"
+        chaoGifPath = "_imagens/chao/chaosonic.gif"
+        chao1.src = chaoGifPath
+        mario.src = marioGifPath
+        fundo.src = "_imagens/fundos/fundosonic.png"
+        gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff)";
+        pipe.src = '_imagens/inimigos/carangueijo.gif'
+        clouds.src = "_imagens/nuvems/sonic.gif"
+    }
 }
-;
 
 

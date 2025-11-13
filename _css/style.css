@@ -11,7 +11,6 @@
     --velocidade: 2s;
     /* Velocidade base para animações de obstáculos */
 }
-
 /* =========================================
    ESTILOS GLOBAIS E RESET
    =========================================
@@ -23,7 +22,6 @@ body {
     background-color: rgb(150, 84, 8);
     /* Cor de fundo geral do corpo */
 }
-
 * {
     margin: 0;
     /* Remove margem padrão */
@@ -32,14 +30,12 @@ body {
     box-sizing: border-box;
     /* Garante que padding e border sejam incluídos na largura/altura */
 }
-
 /* Classe para garantir a aplicação da fonte específica */
 .press-start-2p-regular {
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
 }
-
 /* =========================================
    ESTILOS DO TABULEIRO DE JOGO (GAME BOARD)
    =========================================
@@ -166,19 +162,16 @@ body {
     display: none;
     /* Escondida inicialmente */
 }
-
 .game-over-screen h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: #F8333C;
     text-shadow: 3px 3px 0px black;
 }
-
 .game-over-screen p {
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
-
 .tela-jogar-denovo {
     position: absolute;
     top: 0;
@@ -196,19 +189,16 @@ body {
     display: none;
     /* Escondida inicialmente */
 }
-
 .tela-jogar-denovo h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: #F8333C;
     text-shadow: 3px 3px 0px black;
 }
-
 .tela-jogar-denovo p {
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
-
 .tela-jogar-denovo button {
     padding: 15px 30px;
     font-size: 1rem;
@@ -222,7 +212,6 @@ body {
     margin-right: 5px;
     transition: all 0.1s ease-in-out;
 }
-
 #restart-button {
     padding: 15px 30px;
     font-size: 1rem;
@@ -235,16 +224,13 @@ body {
     /* Corrigido de --game-font para --fonte */
     transition: all 0.1s ease-in-out;
 }
-
 #restart {
     background-color: #3e9e5f;
 }
-
 #restart-button:active {
     transform: translateY(4px);
     box-shadow: none;
 }
-
 /* =========================================
    ESTILOS DOS ÍCONES DE VIDA
    =========================================
@@ -256,12 +242,10 @@ body {
     gap: 5px;
     /* Espaço entre os ícones */
 }
-
 .life-icon {
     width: 30px;
     height: 30px;
 }
-
 /* =========================================
    ESTILO DA TELA DE INÍCIO (NICKNAME)
    =========================================
@@ -286,19 +270,16 @@ body {
     /* Fica acima da tela de Game Over */
     text-align: center;
 }
-
 .tela-Inicial h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #f7d51d;
     text-shadow: 3px 3px 0px #e15f00;
 }
-
 .tela-Inicial label {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
-
 .tela-Inicial input {
     padding: 10px;
     font-size: 1.2rem;
@@ -309,7 +290,6 @@ body {
     font-family: var(--fonte);
     text-align: center;
 }
-
 #start-button, #rank-button {
     /* padding: 15px 30px; */
     font-size: 1.2rem;
@@ -330,13 +310,11 @@ body {
 #rank-button{
     background-color: #007bff;
 }
-
 #start-buttton:active{
     /* transition: 0.25s; */
     background-color: #770404;
     transform: scale(0.98);
 }
-
 /* =========================================
    ESTILOS DE SELEÇÃO DE PERSONAGEM
    =========================================
@@ -357,9 +335,6 @@ body {
     animation: rodar-menu 10s linear infinite;
     width: 100%;
 }
-
-
-
 /* Estilo para a tela de continuar/reiniciar, parece uma duplicação. */
 /* #Continuar-Reniciar é um ID de um elemento não definido neste CSS */
 /* Caso exista, estilize aqui: */
@@ -373,22 +348,18 @@ body {
     display: flex;
     flex-direction: row;
 }
-
-
 .personagemEscolha {
     width: 125px;
     height: 125px;
     padding: 10px;
     cursor: pointer;
 }
-
 /* Estilo para a div que contém o personagem (provavelmente para a borda de seleção) */
 #divPersonagem {
     /* Este ID parece ser para um elemento singular, mas é usado para 'divPersonagem' que é uma classe */
     border: 3px solid white;
     width: 100%;
 }
-
 /* =========================================
    ESTILOS DE ESTADO DO JOGO E PERSONAGEM
    =========================================
@@ -399,14 +370,12 @@ body {
     animation-play-state: running;
     /* Inicia a animação do cano quando o jogo começa */
 }
-
 /* Contêiner para o botão de ranking */
 .rank-button-container {
     text-align: center;
     margin: 30px 0;
     z-index: 20;
 }
-
 .rank-button {
     display: inline-block;
     padding: 15px 30px;
@@ -421,16 +390,13 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     transition: background-color 0.2s ease;
 }
-
 .rank {
     background-color: #0056b3;
 }
-
 .mario.invuneravel {
     animation: piscar 0.2s infinite alternate;
     /* Animação de piscar para invulnerabilidade */
 }
-
 /* Estilo de seleção para a div do personagem */
 .divPersonagem.selecionado {
     border: 3px solid #4CAF50;
@@ -438,15 +404,11 @@ body {
     box-shadow: 0 0 15px #4CAF50;
     /* Sombra verde */
 }
-
 .divPersonagem {
     border: 3px solid white;
     /* Borda padrão */
     width: 200px;
 }
-
-
-
 /* =========================================
    ESTILOS DE MOEDAS
    =========================================
@@ -461,120 +423,12 @@ body {
     animation: pipe-animation var(--velocidade) infinite linear;
     /* Usa a mesma animação do cano */
 }
-
 /* =========================================
    ESTILOS DE TEMAS/FASES
    =========================================
    Classes para alterar o fundo e efeitos
    visuais do jogo conforme a pontuação avança.
 */
-.theme-tarde {
-    background: linear-gradient(#ffdd66, #ff8c00, #a033a0);
-    /* Gradiente de pôr do sol */
-    position: relative;
-}
-
-.theme-noite {
-    background: linear-gradient(#0a0a40, #000000);
-    /* Gradiente de céu noturno */
-    position: relative;
-}
-
-.theme-infernal {
-    background: linear-gradient(#770404, #fc0303, #e95906, #e95906c7);
-    /* Gradiente de inferno */
-}
-
-#inferno-background {
-    position: absolute;
-    bottom: 15px;
-    /* Alinha com o chão */
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background-image: url('../_imagens/teste2.png') !important;
-    /* Fundo de rochas */
-    background-repeat: repeat-x;
-    z-index: 1;
-    display: none;
-    /* Escondido inicialmente */
-}
-
-/* Efeitos adicionais para os temas */
-.theme-tarde::before,
-.theme-noite::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-    /* Efeito de grão/estrelas sutis */
-    background-size: 50px 50px;
-    opacity: 0.5;
-    z-index: 0;
-}
-
-.theme-tarde::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: radial-gradient(ellipse at bottom, rgba(255, 200, 0, 0.3) 0%, transparent 70%);
-    /* Brilho do sol poente */
-    z-index: 1;
-}
-
-.theme-tarde .clouds {
-    filter: brightness(0.8) hue-rotate(-10deg);
-    /* Ajusta a cor das nuvens para o tema tarde */
-}
-
-.theme-noite .clouds,
-.theme-infernal .clouds {
-    filter: brightness(0.5);
-    /* Escurece as nuvens para noite/inferno */
-}
-
-#star-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../_imagens/teste.png');
-    /* Imagem de estrelas */
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 0;
-    display: none;
-    /* Escondido inicialmente */
-    animation: brilha-estrela-animation-tarde 5s infinite linear;
-    /* Animação padrão para estrelas */
-}
-
-.ember {
-    position: absolute;
-    bottom: -10px;
-    /* Começa abaixo da tela */
-    width: 5px;
-    height: 5px;
-    background-color: #e60808;
-    border-radius: 50%;
-    animation: rise-and-fade 3s linear infinite;
-    /* Animação de brasa subindo */
-    z-index: 50;
-    /* Acima de muitos elementos */
-}
-
-.tremer {
-    animation: tremer-tela 0.2s linear infinite;
-    /* Animação de tremor de tela */
-}
-
 /* =========================================
    TELA DE STARTUP COM IMAGEM
    =========================================
@@ -600,14 +454,12 @@ body {
     transition: opacity 1s ease-out;
     /* Transição suave para o fade out */
 }
-
 #passioneScreen.fade-out {
     opacity: 0;
     /* Torna invisível */
     pointer-events: none;
     /* Desativa interação com elementos por baixo */
 }
-
 #startup-image {
     max-width: 100%;
     max-height: 100%;
@@ -617,42 +469,18 @@ body {
 #divMario{
     animation: rodar-menu 5s infinite linear;
 }
-
-
-
 #marioInicio{
     display: none;
 }
 #nickname{
     border-radius: 10px;
 }
-
 /* =========================================
    KEYFRAMES (ANIMAÇÕES CSS)
    =========================================
    Define as animações usadas pelos elementos
    do jogo.
 */
-@keyframes tremer-tela {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-2px);
-    }
-
-    50% {
-        transform: translateX(2px);
-    }
-
-    75% {
-        transform: translateX(-2px);
-    }
-}
-
 @keyframes pipe-animation {
     from {
         right: -160px;
@@ -716,7 +544,7 @@ body {
 
     /* Pisca alterando a opacidade */
 }
-
+/* 
 @keyframes brilha-estrela-animation {
     0% {
         opacity: 0.1;
@@ -743,8 +571,7 @@ body {
     100% {
         opacity: 0.1;
     }
-}
-
+} */
 @keyframes rise-and-fade {
     to {
         bottom: 100%;
@@ -777,7 +604,7 @@ body {
     }
     100%{
         transform: rotate(0deg);
-         scale:1
+        scale:1
     }
     
 }
@@ -791,61 +618,61 @@ body {
 }
 
 #marioDiv{
-    transition: 0.25s;
+    transition: 0.35s;
 }
 #marioDiv:hover{
     border-color: red;
-    transition: 0.25s;
+    transition: 0.35s;
     box-shadow: 0px 0px 21px red;
-    background-image: url(/_imagens/ImagemDivMario.jpg);
+    background-image: url(/_imagens/hoover/mariofundo.jpg);
     background-size: 100px;
     background-position: bottom;
     transform: scale(1.25);
 }
 #sonicDiv{
-    transition: 0.25s;
+    transition: 0.35s;
 }
 #sonicDiv:hover{
     border-color: cyan;
-    transition: 0.25s;
+    transition: 0.35s;
     box-shadow: 0px 0px 21px cyan;
-    background-image: url(/_imagens/sonicFundo.jpg);
+    background-image: url(/_imagens/hoover/sonicfundo.jpg);
     background-size: cover;
     background-position: bottom;
     transform: scale(1.25);
 }
 #dexterDiv{
-    transition: 0.25s;
+    transition: 0.35s;
 }
 #dexterDiv:hover{
     border-color: rgb(255, 113, 19);
-    transition: 0.25s;
+    transition: 0.35s;
     box-shadow: 0px 0px 21px rgb(255, 113, 19);
-    background-image: url(/_imagens/dexterFundo.jpg);
+    background-image: url(/_imagens/hoover/dexterfundo.jpg);
     background-size: cover;
     background-position: bottom;
     transform: scale(1.25);
 }
 #florzinhaDiv{
-    transition: 0.25s;
+    transition: 0.35s;
 }
 #florzinhaDiv:hover{
     border-color: rgb(255, 28, 255);
-    transition: 0.25s;
+    transition: 0.35s;
     box-shadow: 0px 0px 21px rgb(255, 28, 255);
-    background-image: url(/_imagens/florzinhaFundo.jpg);
+    background-image: url(/_imagens/hoover/florzinhafundo.jpg);
     background-size: cover;
     background-position: bottom;
     transform: scale(1.25);
 }
 #ossoDiv{
-    transition: 0.25s;
+    transition: 0.35s;
 }
 #ossoDiv:hover{
     border-color: rgb(63, 11, 94);
-    transition: 0.25s;
+    transition: 0.35s;
     box-shadow: 0px 0px 21px rgb(63, 11, 94);
-    background-image: url(/_imagens/ossoFundo.jpg);
+    background-image: url(/_imagens/hoover/ossofundo.jpg);
     background-size: cover;
     background-position: bottom;
     transform: scale(1.25);
@@ -855,49 +682,12 @@ body {
     width: 100%;
 
 }
-
 #img1{
+    opacity: 100%;
     bottom: 0;
     position: absolute;
-    animation: mexer-chao1 linear 1 3s;
     display: block;
 }
-#img2{
-    bottom: 0;
-    position: absolute;
-    animation: mexer-chao2 linear infinite 6s;
-    display: block;
-}
-#img3{
-    bottom: 0;
-    position: absolute;
-    animation: mexer-chao2 linear infinite 6s;
-    animation-delay: 3s;
-    opacity: 0;
-}
-
-
-
-@keyframes mexer-chao1{
-    from {
-        right: 0px;
-    }
-
-    to {
-        right: 100%;
-    }
-}
-@keyframes mexer-chao2{
-    from {
-        right: -1920px;
-    }
-
-    to {
-        right: 100%;
-    }
-}
-
-
 .animacao-estrela{
     animation: piscar-estrela 1s linear infinite;
 
@@ -994,3 +784,15 @@ body {
 }
 
 /* Final Modal simples para ranking */
+
+.scanline{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0.1;
+}
+
+

@@ -19,9 +19,9 @@
 
     </div>
     <div class="cenario">
-        <img src="/_imagens/chãoMario.png" id="img1" class="chao">
-        <img src="/_imagens/chãoMario.png" id="img2" class="chao">
-        <img src="/_imagens/chãoMario.png" id="img3" class="chao">
+        <img src="_imagens/chao/chaomario.gif" id="img1" class="chao">
+        <!-- <img src="_imagens/chao/chaomario.png" id="img2" class="chao">
+        <img src="_imagens/chao/chaomario.png" id="img3" class="chao"> -->
     </div>
     <div class="game-board">
         <div class="tela-Inicial">
@@ -39,30 +39,29 @@
 
             <div id="escolha-Personagem">
                 <div id="marioDiv" class="divPersonagem" value="mario" onclick="escolhaPersonagem('mario')">
-                    <img src="/_imagens/newMario.gif" alt="" class="personagemEscolha">
+                    <img src="_imagens/persona/mario.gif" alt="" class="personagemEscolha">
                     <p>Mario</p>
                 </div>
                 <div id="sonicDiv" class="divPersonagem" value="sonic" onclick="escolhaPersonagem('sonic')">
-                    <img src="_imagens/sonic-run.gif" alt="" class="personagemEscolha">
+                    <img src="_imagens/persona/sonic.gif" alt="" class="personagemEscolha">
                     <p>Sonic</p>
                 </div>
                 <div id="dexterDiv" class="divPersonagem" value="dexter" onclick="escolhaPersonagem('dexter')">
-                    <img src="_imagens/Dexter.gif" alt="" class="personagemEscolha">
+                    <img src="_imagens/persona/dexter.gif" alt="" class="personagemEscolha">
                     <p>Dexter</p>
                 </div>
                 <div id="florzinhaDiv" class="divPersonagem" value="florzinha" onclick="escolhaPersonagem('florzinha')">
-                    <img src="_imagens/Florzinha.gif" alt="" class="personagemEscolha">
+                    <img src="_imagens/persona/florzinha.gif" alt="" class="personagemEscolha">
                     <p>Florzinha</p>
                 </div>
                 <div id="ossoDiv" class="divPersonagem" value="osso" onclick="escolhaPersonagem('osso')">
-                    <img src="_imagens/Puro osso.gif" alt="" class="personagemEscolha">
+                    <img src="_imagens/persona/puro.gif" alt="" class="personagemEscolha">
                     <p>Puro Osso</p>
-
                 </div>
             </div>
         </div>
         <div class="fundos">
-            <img src="/_imagens/fundos/FundoMario.png" class="fundo-gif">
+            <img src="/_imagens/fundos/fundomario.png" class="fundo-gif">
         </div>
         <div class="tela-jogar-denovo">
             <h1>Voce deseja jogar outra vez?</h1>
@@ -76,12 +75,12 @@
 
         <div id="inferno-background"></div>
         <!-- <div class="onda-calor"></div> -->
-        <img src="/_media/com-webp-to-gif-converter-unscreen.gif" class="pipe">
+        <img src="./_imagens/inimigos/goomba.gif" class="pipe">
         <img src="./_imagens/bullet.png" width="100px" class="bullet">
-        <img src="./_imagens/newMario.gif" class="mario" id="marioInicio">
-        <img src="./_imagens/clouds.png" class="clouds">
+        <img src="./_imagens/persona/mario.gif" class="mario" id="marioInicio">
+        <img src="_imagens/nuvems/mario.png" width="370px" class="clouds">
+        <img src="_imagens/filter.gif" width="100%" class="scanline">
         <div id="star-layer"></div>
-
 
         <div class="score-container">
             <div class="score">Score: 0</div>
@@ -93,7 +92,7 @@
             <p>Sua pontuação foi: <span id="final-score">0</span></p>
             <button id="restart-button" onclick="window.location.reload()">Jogar Novamente</button>
         </div>
-
+        
     </div>
     <!-- Modal do Ranking -->
     <div id="modal-ranking" class="modal-ranking" style="display: none;">
@@ -107,5 +106,4 @@
 </body>
 <script src="_javascript/script.js" defer></script>
 <script src="_javascript/ranking.js" defer></script>
-
 </html>
