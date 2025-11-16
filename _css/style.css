@@ -307,6 +307,28 @@ body {
     /* Corrigido de monospace para --fonte */
     border-radius: 50%;
 }
+
+
+#perso-button{
+     font-size: 0.75rem;
+    color: white;
+    background-color: #c00a0a;
+    align-items: center;
+    box-shadow: 1px 7px 0 rgb(109, 107, 107);
+    text-shadow: 4px 7px 70px black;
+    border: 6px solid rgb(44, 44, 44);
+    outline: 3px solid rgb(177, 175, 175);
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    font-family: var(--fonte);
+    /* Corrigido de monospace para --fonte */
+    border-radius: 50%;
+
+}
+
+
+
 #rank-button{
     background-color: #007bff;
 }
@@ -330,11 +352,42 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 1200px;
+    border: grey solid 2px;
+    background-color: white;
+    border-radius: 8px;
+    height: 700px;
+    position: relative;
+    z-index: 2550;
+}
+#linha1, #linha2 {
+    font-size: 1.2rem;
+    margin-top: 25px;
+    color: white;
+    font-family: var(--fonte);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     flex-direction: row;
     gap: 20px;
-    animation: rodar-menu 10s linear infinite;
     width: 100%;
+    background-color: white;
+    height: 170px;
+    position: relative;
+    z-index: 2550;
 }
+
+
+
+
+
+
+
+
+
 /* Estilo para a tela de continuar/reiniciar, parece uma duplicação. */
 /* #Continuar-Reniciar é um ID de um elemento não definido neste CSS */
 /* Caso exista, estilize aqui: */
@@ -353,11 +406,12 @@ body {
     height: 125px;
     padding: 10px;
     cursor: pointer;
+
 }
 /* Estilo para a div que contém o personagem (provavelmente para a borda de seleção) */
 #divPersonagem {
     /* Este ID parece ser para um elemento singular, mas é usado para 'divPersonagem' que é uma classe */
-    border: 3px solid white;
+    border: 3px solid rgb(0, 0, 0);
     width: 100%;
 }
 /* =========================================
@@ -405,7 +459,7 @@ body {
     /* Sombra verde */
 }
 .divPersonagem {
-    border: 3px solid white;
+    border: 3px solid rgb(34, 29, 29);
     /* Borda padrão */
     width: 200px;
 }
@@ -469,9 +523,7 @@ body {
 #divMario{
     animation: rodar-menu 5s infinite linear;
 }
-#marioInicio{
-    display: none;
-}
+
 #nickname{
     border-radius: 10px;
 }
@@ -727,6 +779,10 @@ body {
         right: 100%;
     }
 }
+
+
+
+
 /* Modal simples para ranking */
 .modal-ranking {
     position: fixed;
@@ -795,4 +851,17 @@ body {
     opacity: 0.1;
 }
 
+
+
+/* modal Personagem */
+
+#modalPerso{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2500;
+}
 

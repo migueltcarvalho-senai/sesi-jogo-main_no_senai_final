@@ -344,7 +344,7 @@ function escolhaPersonagem(personagem) {
             gameBoard.style.background = 'linear-gradient( #f5cfecff , #ffadeb, #ff7ee0  )';
             clouds.style.width = "370px";
             clouds.src = "./_imagens/nuvems/menina.png";
-            break; 
+            break;
         case 'osso':
             pipe.src = './_imagens/inimigos/gaveira.gif';
             pipe.style.width = '150px';
@@ -366,7 +366,7 @@ function escolhaPersonagem(personagem) {
 
     mario.src = marioGifPath;
     spriteMorteTemporario = gameOverImagePath;
-    
+
     mario.style.transform = mudarDirecao ? 'scaleX(-1)' : 'scaleX(1)';
     chao1.src = chaoGifPath;
     chao2.src = chaoGifPath;
@@ -477,9 +477,10 @@ function bmo() {
         clouds.style.width = "370px";
         musicaMario = new Audio('./_media/_sons/faseSons/HoraDeAventura.mp3');
         fundo.src = './_imagens/fundos/fundoaventura.png';
-    }};
+    }
+};
 
-function shadow(){
+function shadow() {
     if (playerNick == "shadow") {
         marioGifPath = "_imagens/persona/shadow.gif"
         chaoGifPath = "_imagens/chao/chaosonic.gif"
@@ -491,5 +492,33 @@ function shadow(){
         clouds.src = "_imagens/nuvems/sonic.gif"
     }
 }
+
+const modalPersonagem = document.getElementById("modalPerso")
+
+var modalAberto = false
+
+function abrirModalPerso() {
+    if (modalAberto == false) {
+        modalPersonagem.style.display = "flex"
+        modalAberto = true
+    }
+
+}
+
+function fecharModalPerso() {
+    if (modalAberto == true){
+        modalPersonagem.style.display = "none"
+    modalAberto = false
+
+    }
+}
+
+
+
+window.addEventListener('click', (evento) => {
+	if (evento.target === modalPersonagem) {
+		fecharModalPerso();
+	}
+});
 
 
