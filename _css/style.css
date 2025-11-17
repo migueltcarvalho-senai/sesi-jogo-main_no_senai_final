@@ -795,4 +795,12 @@ body {
     opacity: 0.1;
 }
 
+.clouds{
+    width: 370px;
+}
+
+.fundo-gif{
+    bottom: 0;
+}
+
 
