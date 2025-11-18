@@ -381,9 +381,9 @@ function escolhaPersonagem(personagem) {
             mario.style.width = '150px';
             gameOverImagePath = './_imagens/morte/tails morte.png';
             chaoGifPath = "_imagens/chao/chaotails.gif";
-            fundo.src = "_imagens/fundos/fundosonic.png";
-            gameBoard.style.background = " linear-gradient( #013086ff, #16b8c4ff, #4fbbedff )";
-            clouds.src = "_imagens/nuvems/sonic.gif";
+            fundo.src = "_imagens/fundos/fundotails.png";
+            gameBoard.style.background = " linear-gradient( #ec5a16ff, #e78c16ff, #f5cb40ff )";
+            clouds.src = "_imagens/nuvems/tails.gif";
             clouds.style.width = "370px";
             break;
         case 'bmo':
