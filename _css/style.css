@@ -700,9 +700,9 @@ body {
     transition: 0.35s;
 }
 #sonicDiv:hover{
-    border-color: cyan;
+    border-color: rgb(73, 158, 255);
     transition: 0.35s;
-    box-shadow: 0px 0px 21px cyan;
+    box-shadow: 0px 0px 21px rgb(73, 158, 255);
     background-image: url(/_imagens/hoover/sonicfundo.jpg);
     background-size: cover;
     background-position: bottom;
@@ -740,6 +740,66 @@ body {
     transition: 0.35s;
     box-shadow: 0px 0px 21px rgb(63, 11, 94);
     background-image: url(/_imagens/hoover/ossofundo.jpg);
+    background-size: cover;
+    background-position: bottom;
+    transform: scale(1.25);
+}
+#tailsDiv{
+    transition: 0.35s;
+}
+#tailsDiv:hover{
+    border-color: rgb(255, 136, 0);
+    transition: 0.35s;
+    box-shadow: 0px 0px 21px rgb(255, 136, 0);
+    background-image: url(/_imagens/hoover/tailsfundo.jpg);
+    background-size: cover;
+    background-position: bottom;
+    transform: scale(1.25);
+}
+#shadowDiv{
+    transition: 0.35s;
+}
+#shadowDiv:hover{
+    border-color: rgb(129, 0, 22);
+    transition: 0.35s;
+    box-shadow: 0px 0px 21px rgb(129, 0, 22);
+    background-image: url(/_imagens/hoover/shadowfundo.jpg);
+    background-size: cover;
+    background-position: bottom;
+    transform: scale(1.25);
+}
+#bmoDiv{
+    transition: 0.35s;
+}
+#bmoDiv:hover{
+    border-color: rgb(76, 245, 180);
+    transition: 0.35s;
+    box-shadow: 0px 0px 21px rgb(76, 245, 180);
+    background-image: url(/_imagens/hoover/aventurafundo.jpg);
+    background-size: cover;
+    background-position: bottom;
+    transform: scale(1.25);
+}
+#ben10Div{
+    transition: 0.35s;
+}
+#ben10Div:hover{
+    border-color: rgb(24, 255, 44);
+    transition: 0.35s;
+    box-shadow: 0px 0px 21px rgb(24, 255, 44);
+    background-image: url(/_imagens/hoover/ben10fundo.png);
+    background-size: cover;
+    background-position: bottom;
+    transform: scale(1.25);
+}
+#lindinhaDiv{
+    transition: 0.35s;
+}
+#lindinhaDiv:hover{
+    border-color: rgb(24, 255, 224);
+    transition: 0.35s;
+    box-shadow: 0px 0px 21px rgb(24, 255, 224);
+    background-image: url(/_imagens/hoover/ben10fundo.png);
     background-size: cover;
     background-position: bottom;
     transform: scale(1.25);

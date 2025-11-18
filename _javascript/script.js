@@ -380,9 +380,9 @@ function escolhaPersonagem(personagem) {
             marioGifPath = "_imagens/persona/tails.gif";
             mario.style.width = '150px';
             gameOverImagePath = './_imagens/morte/tails morte.png';
-            chaoGifPath = "_imagens/chao/chaosonic.gif";
+            chaoGifPath = "_imagens/chao/chaotails.gif";
             fundo.src = "_imagens/fundos/fundosonic.png";
-            gameBoard.style.background = " linear-gradient( #07085eff, #1647c4ff, #4fc0edff )";
+            gameBoard.style.background = " linear-gradient( #013086ff, #16b8c4ff, #4fbbedff )";
             clouds.src = "_imagens/nuvems/sonic.gif";
             clouds.style.width = "370px";
             break;
@@ -413,6 +413,20 @@ function escolhaPersonagem(personagem) {
             gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff )";
             clouds.src = "_imagens/nuvems/aventura.gif";
             clouds.style.width = "370px";
+            break;
+        case 'lindinha':
+            pipe.src = './_imagens/inimigos/macaco.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/MeninasSuperpoderosasTurbo.mp3');
+            marioGifPath = './_imagens/persona/lindinha.gif';
+            gameOverImagePath = './_imagens/morte/lindinha morte.png';
+            chaoGifPath = './_imagens/chao/chaomenina.gif';
+            mario.style.width = '170px';
+            fundo.src = './_imagens/fundos/fundomenina.png'
+            gameBoard.style.background = 'linear-gradient( #cff4f5ff , #adecffff, #7eecffff  )';
+            clouds.style.width = "370px";
+            clouds.src = "./_imagens/nuvems/menina.png";
             break;
         default:
             console.warn(`Personagem '${personagem}' não reconhecido. Usando Mario padrão.`);
