@@ -263,7 +263,6 @@ startButton.addEventListener('click', () => {
         alert('Por favor, digite um nick para começar!');
     }
 });
-
 /* =========================================
    FUNÇÕES DE LÓGICA DE MENU E ESTADO
    =========================================
@@ -359,6 +358,62 @@ function escolhaPersonagem(personagem) {
             clouds.src = "./_imagens/nuvems/puro.png";
             clouds.style.width = "370px";
             break;
+        case 'shadow':
+            pipe.src = '_imagens/inimigos/carangueijo.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/PuroOsso.mp3');
+            marioGifPath = "_imagens/persona/shadow.gif";
+            mario.style.width = '150px';
+            gameOverImagePath = './_imagens/morte/shadow morte.png';
+            chaoGifPath = "_imagens/chao/chaosonic.gif";
+            fundo.src = "_imagens/fundos/fundosonic.png";
+            gameBoard.style.background = " linear-gradient( #8b1b1bff, #3b0707ff, #02020cff)";
+            clouds.src = "_imagens/nuvems/sonic.gif";
+            clouds.style.width = "370px";
+            break;
+        case 'tails':
+            pipe.src = '_imagens/inimigos/carangueijo.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/PuroOsso.mp3');
+            marioGifPath = "_imagens/persona/tails.gif";
+            mario.style.width = '150px';
+            gameOverImagePath = './_imagens/morte/tails morte.png';
+            chaoGifPath = "_imagens/chao/chaosonic.gif";
+            fundo.src = "_imagens/fundos/fundosonic.png";
+            gameBoard.style.background = " linear-gradient( #07085eff, #1647c4ff, #4fc0edff )";
+            clouds.src = "_imagens/nuvems/sonic.gif";
+            clouds.style.width = "370px";
+            break;
+        case 'bmo':
+            pipe.src = '_imagens/inimigos/gunter.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/HoraDeAventura.mp3');
+            marioGifPath = "_imagens/persona/bmo.gif";
+            mario.style.width = '150px';
+            gameOverImagePath = './_imagens/morte/bmo morte.png';
+            chaoGifPath = "_imagens/chao/chaoaventura.gif";
+            fundo.src = "_imagens/fundos/fundaventura.png";
+            gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff )";
+            clouds.src = "_imagens/nuvems/aventura.gif";
+            clouds.style.width = "370px";
+            break;
+        case 'ben10':
+            pipe.src = '_imagens/inimigos/gunter.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/HoraDeAventura.mp3');
+            marioGifPath = "_imagens/persona/ben10.gif";
+            mario.style.width = '170px';
+            gameOverImagePath = './_imagens/morte/ben10 morte.png';
+            chaoGifPath = "_imagens/chao/chaoaventura.gif";
+            fundo.src = "_imagens/fundos/fundaventura.png";
+            gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff )";
+            clouds.src = "_imagens/nuvems/aventura.gif";
+            clouds.style.width = "370px";
+            break;
         default:
             console.warn(`Personagem '${personagem}' não reconhecido. Usando Mario padrão.`);
             break;
@@ -414,7 +469,6 @@ function morrer(pipePosition, bulletPosition, marioPosition) {
     finalScoreElement.textContent = score;
     salvarPontuacao(playerNick, score);
 };
-
 function salvarPontuacao(nomeJogador, pontuacaoFinal) {
     if (typeof window.salvarScoreRanking === 'function') {
         window.salvarScoreRanking(nomeJogador, pontuacaoFinal);
@@ -492,7 +546,6 @@ function shadow() {
         clouds.src = "_imagens/nuvems/sonic.gif"
     }
 }
-
 const modalPersonagem = document.getElementById("modalPerso")
 
 var modalAberto = false
@@ -504,7 +557,6 @@ function abrirModalPerso() {
     }
 
 }
-
 function fecharModalPerso() {
     if (modalAberto == true){
         modalPersonagem.style.display = "none"
@@ -512,9 +564,6 @@ function fecharModalPerso() {
 
     }
 }
-
-
-
 window.addEventListener('click', (evento) => {
 	if (evento.target === modalPersonagem) {
 		fecharModalPerso();

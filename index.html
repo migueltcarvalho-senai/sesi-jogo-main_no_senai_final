@@ -32,7 +32,9 @@
             <input type="text" id="nickname" placeholder="Seu Nick Aqui" maxlength="15">
             <div>
                 <button id="start-button">Start</button>
+                <br>
                 <button id="rank-button" onclick="abrirModalRanking()">Ranking</button>
+                <br>
                 <button id="perso-button" onclick="abrirModalPerso()">Personagens</button>
             </div>
         </div>
@@ -85,9 +87,9 @@
         </div>
     </div>
 
-
     <div id="modalPerso" style="display: none;">
         <div id="escolha-Personagem">
+            <button id="person-fechar" type="button" onclick="fecharPerson()">X</button>
             <div id="linha1">
                 <div id="marioDiv" class="divPersonagem" value="mario" onclick="escolhaPersonagem('mario')">
                     <img src="_imagens/persona/mario.gif" alt="" class="personagemEscolha">
@@ -112,40 +114,30 @@
             </div>
 
             <div id="linha2">
-                <div id="marioDiv" class="divPersonagem" value="mario" onclick="escolhaPersonagem('mario')">
-                    <img src="_imagens/persona/mario.gif" alt="" class="personagemEscolha">
-                    <p>Mario</p>
+                <div id="tailsDiv" class="divPersonagem" value="tails" onclick="escolhaPersonagem('tails')">
+                    <img src="_imagens/persona/tails.gif" alt="" class="personagemEscolha">
+                    <p>Tails</p>
                 </div>
-                <div id="sonicDiv" class="divPersonagem" value="sonic" onclick="escolhaPersonagem('sonic')">
-                    <img src="_imagens/persona/sonic.gif" alt="" class="personagemEscolha">
-                    <p>Sonic</p>
+                <div id="shadowDiv" class="divPersonagem" value="shadow" onclick="escolhaPersonagem('shadow')">
+                    <img src="_imagens/persona/shadow.gif" alt="" class="personagemEscolha">
+                    <p>Shadow</p>
                 </div>
-                <div id="dexterDiv" class="divPersonagem" value="dexter" onclick="escolhaPersonagem('dexter')">
-                    <img src="_imagens/persona/dexter.gif" alt="" class="personagemEscolha">
-                    <p>Dexter</p>
+                <div id="bmoDiv" class="divPersonagem" value="bmo" onclick="escolhaPersonagem('bmo')">
+                    <img src="_imagens/persona/bmo.gif" alt="" class="personagemEscolha">
+                    <p>BMO</p>
                 </div>
-                <div id="florzinhaDiv" class="divPersonagem" value="florzinha" onclick="escolhaPersonagem('florzinha')">
-                    <img src="_imagens/persona/florzinha.gif" alt="" class="personagemEscolha">
-                    <p>Florzinha</p>
+                <div id="benDiv" class="divPersonagem" value="ben10" onclick="escolhaPersonagem('ben10')">
+                    <img src="_imagens/persona/ben10.gif" alt="" class="personagemEscolha">
+                    <p>Ben 10</p>
                 </div>
                 <div id="ossoDiv" class="divPersonagem" value="osso" onclick="escolhaPersonagem('osso')">
                     <img src="_imagens/persona/puro.gif" alt="" class="personagemEscolha">
-                    <p>Puro Osso</p>
+                    <p>Mutante Rex</p>
                 </div>
             </div>
         </div>
     </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 </body>
 <script src="_javascript/script.js" defer></script>
 <script src="_javascript/ranking.js" defer></script>

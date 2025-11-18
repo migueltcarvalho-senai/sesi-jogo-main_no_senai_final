@@ -13,11 +13,6 @@ function fecharModalRanking() {
 	if (!modalRanking) return;
 	modalRanking.style.display = 'none';
 }
-
-
-
-
-
 async function carregarRanking() {
 	if (!listaRanking || !estadoRanking) return;
 
