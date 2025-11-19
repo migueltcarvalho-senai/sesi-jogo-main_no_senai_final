@@ -342,7 +342,7 @@ function escolhaPersonagem(personagem) {
             gameOverImagePath = './_imagens/morte/dexter Morte.png';
             chaoGifPath = './_imagens/chao/chaodexter.gif';
             mario.style.width = '170px';
-            clouds.src = "./_imagens/nuvems/dexter.png";
+            clouds.src = "./_imagens/nuvems/nuvemdexter.gif";
             clouds.style.width = "370px";
             break;
         case 'florzinha':
@@ -381,7 +381,7 @@ function escolhaPersonagem(personagem) {
             marioGifPath = "_imagens/persona/shadow.gif";
             mario.style.width = '150px';
             gameOverImagePath = './_imagens/morte/shadow morte.png';
-            chaoGifPath = "_imagens/chao/chaosonic.gif";
+            chaoGifPath = "_imagens/chao/chaoshadow.gif";
             fundo.src = "_imagens/fundos/fundoshadow.png";
             gameBoard.style.background = " linear-gradient( #8b1b1bff, #3b0707ff, #02020cff)";
             clouds.src = "_imagens/nuvems/sonic.gif";
@@ -410,9 +410,9 @@ function escolhaPersonagem(personagem) {
             mario.style.width = '150px';
             gameOverImagePath = './_imagens/morte/bmo morte.png';
             chaoGifPath = "_imagens/chao/chaoaventura.gif";
-            fundo.src = "_imagens/fundos/fundaventura.png";
+            fundo.src = "_imagens/fundos/fundoaventura.png";
             gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff )";
-            clouds.src = "_imagens/nuvems/aventura.gif";
+            clouds.src = "_imagens/nuvems/mario.png";
             clouds.style.width = "370px";
             break;
         case 'ben10':
@@ -424,9 +424,9 @@ function escolhaPersonagem(personagem) {
             mario.style.width = '170px';
             gameOverImagePath = './_imagens/morte/ben10 morte.png';
             chaoGifPath = "_imagens/chao/chaoaventura.gif";
-            fundo.src = "_imagens/fundos/fundaventura.png";
-            gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff )";
-            clouds.src = "_imagens/nuvems/aventura.gif";
+            fundo.src = "_imagens/fundos/fundoben10.png";
+            gameBoard.style.background = " linear-gradient( #000000ff, #5b499cff, #4c229bff )";
+            clouds.src = "_imagens/nuvems/mario.gif";
             clouds.style.width = "370px";
             break;
         case 'rex':
@@ -438,9 +438,9 @@ function escolhaPersonagem(personagem) {
             mario.style.width = '170px';
             gameOverImagePath = './_imagens/morte/rex morte.png';
             chaoGifPath = "_imagens/chao/chaoaventura.gif";
-            fundo.src = "_imagens/fundos/fundaventura.png";
-            gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff )";
-            clouds.src = "_imagens/nuvems/aventura.gif";
+            fundo.src = "_imagens/fundos/fundoben10.png";
+            gameBoard.style.background = " linear-gradient( #000000ff, #633909ff, #8a610aff )";
+            clouds.src = "_imagens/nuvems/mario.gif";
             clouds.style.width = "370px";
             break;
         case 'lindinha':
