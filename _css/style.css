@@ -490,8 +490,8 @@ margin-bottom: 550px;
 */
 .coin {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     z-index: 15;
     /* Fica acima do tabuleiro */
     animation: pipe-animation var(--velocidade) infinite linear;
@@ -797,9 +797,23 @@ margin-bottom: 550px;
     background-position: bottom;
     transform: scale(1.25);
 }
+#rexDiv:hover{
+    border-color: rgb(143, 61, 7);
+    transition: 0.35s;
+    box-shadow: 0px 0px 21px rgb(230, 127, 44);
+    background-image: url(/_imagens/hoover/Fundorex.png);
+    background-size: cover;
+    background-position: bottom;
+    transform: scale(1.25);
+}
+
+#rexDiv{
+    transition: 0.35s;
+}
 #lindinhaDiv{
     transition: 0.35s;
 }
+
 #lindinhaDiv:hover{
     border-color: rgb(24, 255, 224);
     transition: 0.35s;
@@ -808,6 +822,30 @@ margin-bottom: 550px;
     background-size: cover;
     background-position: bottom;
     transform: scale(1.25);
+}
+#docinhoDiv:hover{
+    border-color: rgb(21, 90, 27);
+    transition: 0.35s;
+    box-shadow: 0px 0px 21px rgb(7, 63, 5);
+    background-image: url(/_imagens/hoover/docinhoFundo.png);
+    background-size: cover;
+    background-position: bottom;
+    transform: scale(1.25);
+}
+#docinhoDiv{
+    transition: 0.35s;
+}
+#luigiDiv:hover{
+    border-color: rgb(167, 250, 99);
+    transition: 0.35s;
+    box-shadow: 0px 0px 21px rgb(7, 63, 5);
+    background-image: url(/_imagens/hoover/fundoLuigi.png);
+    background-size: cover;
+    background-position: bottom;
+    transform: scale(1.25);
+}
+#luigiDiv{
+    transition: 0.35s;
 }
 
 .cenario{

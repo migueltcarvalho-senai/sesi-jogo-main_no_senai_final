@@ -22,7 +22,7 @@ const chao1 = document.querySelector("#img1");
 const chao2 = document.querySelector("#img2");
 const chao3 = document.querySelector("#img3");
 const fundo = document.querySelector('.fundo-gif');
-pipe.src = '_imagens/Goomba.gif';
+pipe.src = '_imagens/inimigos/goomba.gif';
 pipe.style.width = '150px';
 pipe.style.height = '150px';
 
@@ -302,6 +302,21 @@ function escolhaPersonagem(personagem) {
             fundo.src = './_imagens/fundos/fundomario.png';
             fundo.style.bottom = "0";
             break;
+        case 'luigi':
+            gameBoard.style.background = "linear-gradient( #87ceeb, #e0f6ff)";
+            musicaMario = new Audio('./_media/_sons/faseSons/MarioMusica.mp3');
+            marioGifPath = './_imagens/persona/luigi.gif';
+            gameOverImagePath = './_imagens/morte/luigi morte.png';
+            pipe.src = './_imagens/inimigos/goomba.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            chaoGifPath = './_imagens/chao/chaomario.gif';;
+            mario.style.width = '170px';
+            clouds.style.width = "370px";
+            clouds.src = "./_imagens/nuvems/mario.png";
+            fundo.src = './_imagens/fundos/fundomario.png';
+            fundo.style.bottom = "0";
+            break;
         case 'sonic':
             gameBoard.style.background = "linear-gradient( #07085eff, #1647c4ff, #4fc0edff )";
             fundo.src = './_imagens/fundos/fundosonic.png';
@@ -362,12 +377,12 @@ function escolhaPersonagem(personagem) {
             pipe.src = '_imagens/inimigos/carangueijo.gif';
             pipe.style.width = '150px';
             pipe.style.height = '150px';
-            musicaMario = new Audio('./_media/_sons/faseSons/PuroOsso.mp3');
+            musicaMario = new Audio('./_media/_sons/faseSons/shadow.mp3');
             marioGifPath = "_imagens/persona/shadow.gif";
             mario.style.width = '150px';
             gameOverImagePath = './_imagens/morte/shadow morte.png';
             chaoGifPath = "_imagens/chao/chaosonic.gif";
-            fundo.src = "_imagens/fundos/fundosonic.png";
+            fundo.src = "_imagens/fundos/fundoshadow.png";
             gameBoard.style.background = " linear-gradient( #8b1b1bff, #3b0707ff, #02020cff)";
             clouds.src = "_imagens/nuvems/sonic.gif";
             clouds.style.width = "370px";
@@ -376,7 +391,7 @@ function escolhaPersonagem(personagem) {
             pipe.src = '_imagens/inimigos/carangueijo.gif';
             pipe.style.width = '150px';
             pipe.style.height = '150px';
-            musicaMario = new Audio('./_media/_sons/faseSons/PuroOsso.mp3');
+            musicaMario = new Audio('./_media/_sons/faseSons/tails.mp3');
             marioGifPath = "_imagens/persona/tails.gif";
             mario.style.width = '150px';
             gameOverImagePath = './_imagens/morte/tails morte.png';
@@ -404,10 +419,24 @@ function escolhaPersonagem(personagem) {
             pipe.src = '_imagens/inimigos/gunter.gif';
             pipe.style.width = '150px';
             pipe.style.height = '150px';
-            musicaMario = new Audio('./_media/_sons/faseSons/HoraDeAventura.mp3');
+            musicaMario = new Audio('./_media/_sons/faseSons/ben10.mp3');
             marioGifPath = "_imagens/persona/ben10.gif";
             mario.style.width = '170px';
             gameOverImagePath = './_imagens/morte/ben10 morte.png';
+            chaoGifPath = "_imagens/chao/chaoaventura.gif";
+            fundo.src = "_imagens/fundos/fundaventura.png";
+            gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff )";
+            clouds.src = "_imagens/nuvems/aventura.gif";
+            clouds.style.width = "370px";
+            break;
+        case 'rex':
+            pipe.src = '_imagens/inimigos/gunter.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/rex.mp3');
+            marioGifPath = "_imagens/persona/rex.gif";
+            mario.style.width = '170px';
+            gameOverImagePath = './_imagens/morte/rex morte.png';
             chaoGifPath = "_imagens/chao/chaoaventura.gif";
             fundo.src = "_imagens/fundos/fundaventura.png";
             gameBoard.style.background = " linear-gradient( #6ce5e9ff, #2586c7ff, #1d3586ff )";
@@ -425,6 +454,20 @@ function escolhaPersonagem(personagem) {
             mario.style.width = '170px';
             fundo.src = './_imagens/fundos/fundomenina.png'
             gameBoard.style.background = 'linear-gradient( #cff4f5ff , #adecffff, #7eecffff  )';
+            clouds.style.width = "370px";
+            clouds.src = "./_imagens/nuvems/menina.png";
+            break;
+        case 'docinho':
+            pipe.src = './_imagens/inimigos/macaco.gif';
+            pipe.style.width = '150px';
+            pipe.style.height = '150px';
+            musicaMario = new Audio('./_media/_sons/faseSons/MeninasSuperpoderosasTurbo.mp3');
+            marioGifPath = './_imagens/persona/docinho.gif';
+            gameOverImagePath = './_imagens/morte/docinho morte.png';
+            chaoGifPath = './_imagens/chao/chaomenina.gif';
+            mario.style.width = '170px';
+            fundo.src = './_imagens/fundos/fundomenina.png'
+            gameBoard.style.background = 'linear-gradient( #cff5d5ff , #adffbfff, #7effafff  )';
             clouds.style.width = "370px";
             clouds.src = "./_imagens/nuvems/menina.png";
             break;
@@ -491,7 +534,7 @@ function salvarPontuacao(nomeJogador, pontuacaoFinal) {
 
 function criarMoeda(bottom) {
     const novaMoeda = document.createElement('img');
-    novaMoeda.src = './_imagens/coin.png';
+    novaMoeda.src = './_imagens/coin.gif';
     novaMoeda.classList.add('coin');
     novaMoeda.style.bottom = `${bottom}px`;
     gameBoard.appendChild(novaMoeda);
