@@ -43,7 +43,7 @@ const startButton = document.querySelector('#start-button');
    Pré-carregamento dos arquivos de áudio e
    definição de imagens padrão para o jogo.
 */
-var marioGifPath = "./_imagens/persona/newMario.gif";
+var marioGifPath = "./_imagens/persona/mario.gif";
 var denovo = false;
 var musicaMario = new Audio("_media/_sons/faseSons/MarioMusica.mp3");
 
@@ -67,7 +67,7 @@ let playerNick = '';
 let loop;
 let scoreInterval;
 let personagemSelecionadoId = 'marioDiv';
-var spriteMorteTemporario = '_imagens/morte/Game over mario.png';
+var spriteMorteTemporario = '_imagens/morte/mario morte.png';
 /* =========================================
    FLAGS DE CONTROLE DE TEMA
    =========================================
