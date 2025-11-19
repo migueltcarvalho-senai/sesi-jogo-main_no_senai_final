@@ -200,7 +200,7 @@ function startGame() {
     // AUMENTO PROGRESSIVO DE VELOCIDADE
     function acelerar() {
         setInterval(() => {
-            novaVelocidade = 2 - score / 1000
+            novaVelocidade = 2 - score / 7500
             pipe.style.animationDuration = novaVelocidade + "s";
             console.log(pipe.style.animationDuration)
             return;
