@@ -89,7 +89,9 @@
 
     <div id="modalPerso" style="display: none;">
         <div id="escolha-Personagem">
-            <button id="person-fechar" type="button" onclick="fecharPerson()">X</button>
+            <div id="botao">
+                <button id="person-fechar" onclick="fecharModalPerso()">X</button>
+            </div>
             <div id="linha1">
                 <div id="marioDiv" class="divPersonagem" value="mario" onclick="escolhaPersonagem('mario')">
                     <img src="_imagens/persona/mario.gif" alt="" class="personagemEscolha">
@@ -114,6 +116,29 @@
             </div>
 
             <div id="linha2">
+                <div id="tailsDiv" class="divPersonagem" value="tails" onclick="escolhaPersonagem('tails')">
+                    <img src="_imagens/persona/tails.gif" alt="" class="personagemEscolha">
+                    <p>Tails</p>
+                </div>
+                <div id="shadowDiv" class="divPersonagem" value="shadow" onclick="escolhaPersonagem('shadow')">
+                    <img src="_imagens/persona/shadow.gif" alt="" class="personagemEscolha">
+                    <p>Shadow</p>
+                </div>
+                <div id="bmoDiv" class="divPersonagem" value="bmo" onclick="escolhaPersonagem('bmo')">
+                    <img src="_imagens/persona/bmo.gif" alt="" class="personagemEscolha">
+                    <p>BMO</p>
+                </div>
+                <div id="ben10Div" class="divPersonagem" value="ben10" onclick="escolhaPersonagem('ben10')">
+                    <img src="_imagens/persona/ben10.gif" alt="" class="personagemEscolha">
+                    <p>Ben 10</p>
+                </div>
+                <div id="lindinhaDiv" class="divPersonagem" value="lindinha" onclick="escolhaPersonagem('lindinha')">
+                    <img src="_imagens/persona/lindinha.gif" alt="" class="personagemEscolha">
+                    <p>lindinha</p>
+                </div>
+            </div>
+
+            <div id="linha3">
                 <div id="tailsDiv" class="divPersonagem" value="tails" onclick="escolhaPersonagem('tails')">
                     <img src="_imagens/persona/tails.gif" alt="" class="personagemEscolha">
                     <p>Tails</p>
