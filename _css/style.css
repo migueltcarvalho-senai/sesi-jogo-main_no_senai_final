@@ -8,7 +8,7 @@
 :root {
     --fonte: "Press Start 2P", system-ui;
     /* Fonte principal do jogo */
-    --velocidade: 2s;
+    --velocidade: 3s;
     /* Velocidade base para animações de obstáculos */
 }
 /* =========================================

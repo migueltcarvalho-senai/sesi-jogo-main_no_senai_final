@@ -5,6 +5,10 @@
    aos elementos HTML que serão manipulados
    durante o jogo, como o personagem, obstáculos e telas.
 */
+
+var novaVelocidade = 10
+var aceleracao = 2
+
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const scoreElement = document.querySelector('.score');
@@ -175,6 +179,7 @@ function startGame() {
     atualizarVidas();
     bmo()
     shadow()
+    acelerar()
 
     scoreInterval = setInterval(() => {
         if (!pausa) score++;
@@ -192,6 +197,19 @@ function startGame() {
             criarMoeda(alturaAleatoria);
         }
     }, 100);
+    // AUMENTO PROGRESSIVO DE VELOCIDADE
+    function acelerar() {
+        setInterval(() => {
+            novaVelocidade = 2 - score / 1000
+            pipe.style.animationDuration = novaVelocidade + "s";
+            console.log(pipe.style.animationDuration)
+            return;
+
+        }, 3);
+
+    }
+
+
 
     // LOOP PRINCIPAL DE VERIFICAÇÃO DE COLISÃO
     loop = setInterval(() => {
@@ -643,16 +661,16 @@ function abrirModalPerso() {
 
 }
 function fecharModalPerso() {
-    if (modalAberto == true){
+    if (modalAberto == true) {
         modalPersonagem.style.display = "none"
-    modalAberto = false
+        modalAberto = false
 
     }
 }
 window.addEventListener('click', (evento) => {
-	if (evento.target === modalPersonagem) {
-		fecharModalPerso();
-	}
+    if (evento.target === modalPersonagem) {
+        fecharModalPerso();
+    }
 });
 
 
